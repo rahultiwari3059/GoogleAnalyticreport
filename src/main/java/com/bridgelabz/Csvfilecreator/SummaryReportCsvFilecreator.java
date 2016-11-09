@@ -79,8 +79,8 @@ public class SummaryReportCsvFilecreator {
 			boolean b = false;
 			// CSV creator for number of summary Report
 			File file = new File(csvFilePath + "summaryreport.csv");
-			/*if (file.exists())
-				file.delete();*/
+			if (file.exists())
+				file.delete();
 
 			if (!file.exists())
 				b = true;

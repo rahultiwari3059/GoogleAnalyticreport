@@ -7,7 +7,7 @@ public class SecretFileModel {
 	public String KEY_FILE_LOCATION;
 	public String SERVICE_ACCOUNT_EMAIL;
 	public String VIEW_ID;
-	public String CsvFilePath;
+	public static String CsvFilePath;
 	public String getCsvFilePath() {
 		return CsvFilePath;
 	}

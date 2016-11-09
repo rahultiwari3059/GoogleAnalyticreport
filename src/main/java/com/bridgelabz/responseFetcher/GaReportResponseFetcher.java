@@ -47,7 +47,7 @@ public class GaReportResponseFetcher {
 			GetReportsResponse response = initializeAnalyticsReportingObject.getReport(service, gaReportInputModel);
 
 			/*-----------------method to write the response into the text file-------------------------*/
-			File file = new File(csvFilePath + gaReportInputModel.getmGaDiscription() + ".txt");
+		/*	File file = new File(csvFilePath + gaReportInputModel.getmGaDiscription() + ".txt");
 			if (file.exists())
 				file.delete();
 
@@ -56,15 +56,15 @@ public class GaReportResponseFetcher {
 
 			FileWriter fw = new FileWriter(file.getAbsoluteFile(), true);
 			BufferedWriter bw = new BufferedWriter(fw);
-
+*/
 			// printing the response
 			System.out.println(response);
 
 			// assigning response into variable response JSON of
 			// GetReportsResponse type
 			GetReportsResponse responsejson = response;
-			bw.write(responsejson.toString());
-			bw.close();
+		/*	bw.write(responsejson.toString());
+			bw.close();*/
 
 			// reading response and placing it to responseModelArrayList
 			responseModelObject = responseReaderObject.responseReader(responsejson.toString());

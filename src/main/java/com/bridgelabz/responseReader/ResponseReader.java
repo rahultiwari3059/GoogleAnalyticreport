@@ -58,7 +58,7 @@ public class ResponseReader {
 					JSONObject metricElemnt = (JSONObject) metricheader1.get(l);
 					// System.out.println(metricElemnt);
 
-					metricHeaderArrayList.add((String) metricElemnt.get(l));
+					metricHeaderArrayList.add((String) metricElemnt.get("name"));
 
 				}
 				responseModelObject.setmMetricHeaderArrayList(metricHeaderArrayList);
@@ -108,8 +108,11 @@ public class ResponseReader {
 							// converting JSONArray into JSONString
 							String valuestring = JSONArray.toJSONString(valuesarray);
 							for (int l1 = 0; l1 < valuesarray.size(); l1++) {
+								
 								metricHashMap.put(metricHeaderArrayList.get(l1), (String) valuesarray.get(l1));
+							//	System.out.println((String) valuesarray.get(l1));
 							}
+							
 							// adding into
 							metricHashMapArrayList.add(metricHashMap);
 							// adding into value1 ArrayList

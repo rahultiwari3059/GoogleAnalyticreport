@@ -14,8 +14,21 @@ public class GaReportInputModel {
 	public String KEY_FILE_LOCATION;
 	public String SERVICE_ACCOUNT_EMAIL;
 	public String VIEW_ID;
+	public String CsvFilePath;
 	// setter and getter method
 	
+	public String getEndDate() {
+		return endDate;
+	}
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+	}
+	public String getCsvFilePath() {
+		return CsvFilePath;
+	}
+	public void setCsvFilePath(String csvFilePath) {
+		CsvFilePath = csvFilePath;
+	}
 	public String getStartDate() {
 		return startDate;
 	}

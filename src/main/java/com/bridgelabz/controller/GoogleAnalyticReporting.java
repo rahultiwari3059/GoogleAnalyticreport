@@ -30,6 +30,7 @@ import com.bridgelabz.model.AppOpenModel;
 import com.bridgelabz.model.AppReOpenModel;
 import com.bridgelabz.model.GaReportInputModel;
 import com.bridgelabz.model.ResponseModel;
+import com.bridgelabz.model.SecretFileModel;
 import com.bridgelabz.responseElementReader.ResponseElementReader;
 import com.bridgelabz.responseFetcher.GaReportResponseFetcher;
 
@@ -37,9 +38,11 @@ import java.util.List;
 
 @Controller
 public class GoogleAnalyticReporting {
+	static String csvfilepath;
 	private static final String UPLOAD_DIRECTORY = "/home/bridgeit/Desktop/GoogleAnalyticwebproject/GoogleAnalyticReport/src/main/webapp/WEB-INF/FilePath/";
 	@Resource(name = "hibernateDao")
 	private HibernateDao hibernateDaoObject;
+	
 
 	@RequestMapping("/uploadform")
 	public ModelAndView uploadForm() {
@@ -58,9 +61,13 @@ public class GoogleAnalyticReporting {
 
 			// taking JSON file path
 			String jsonfilepath = UPLOAD_DIRECTORY + "/" + file.getOriginalFilename();
-
+			
+			
 			// creating object of ResponseModel
 			ResponseModel responseModelObject = new ResponseModel();
+			
+			//creating object of SecretModelObject
+			SecretFileModel secretFileModelObject= new SecretFileModel();
 
 			// creating object of ResponseElementReader
 			ResponseElementReader ResponseElementReader = new ResponseElementReader();
@@ -83,7 +90,11 @@ public class GoogleAnalyticReporting {
 			// passing JSONpath and getting ArrayList of GaInputInfoModel class
 			ArrayList<GaReportInputModel> gaReportInputInfoArrayList = GaReprtInfoArrayListObject
 					.readInputJsonFile(jsonfilepath);
-			// = new ArrayList<AllElementModels>();
+			
+			
+			csvfilepath=secretFileModelObject.getCsvFilePath();
+
+		
 			for (int i = 0; i < gaReportInputInfoArrayList.size(); i++) {
 
 				// getting responseModel after passing one by one
@@ -123,8 +134,10 @@ public class GoogleAnalyticReporting {
 
 			List<AppReOpenModel> appReopenList = (List<AppReOpenModel>) hibernateDaoObject.getAppReOpen();
 			model.addAttribute("appReopenList", appReopenList);
+			
 			List<AppOpenModel> appOpenList = (List<AppOpenModel>) hibernateDaoObject.getAppOpen();
 			model.addAttribute("appOpenList", appOpenList);
+			
 			msg = "file uploaded successfully";
 		}
 
@@ -133,33 +146,30 @@ public class GoogleAnalyticReporting {
 			e.printStackTrace();
 		}
 		model.addAttribute("filesuccess", msg);
-		return new ModelAndView("AppReOpen");
+		return new ModelAndView("GaReportExplorer");
 
 	}
-	/*-------------------------------------------Download file to local storage-------------------------------------------*/
+	/*-------------------------------------------Download file to local storage for App ReOpen ------------------------------------------*/
 
 	@RequestMapping(value = "AppReopenDownload", method = RequestMethod.GET)
 	public void getReOpenCSvFile(
 			HttpServletResponse response/* ,@PathVariable String value */) throws FileNotFoundException {
-		// fileMeta = files.get(Integer.parseInt(value));
 
 		try {
-			// System.out.println("download file name:" +
-			// fileMeta.getDownloadFileName());
+			
 			// writing download file in byte
-			File file = new File("/home/bridgeit/Music/weboutput/GAReportappReopen.csv");
+			File file = new File(csvfilepath+"GAReportappReopen.csv");
 			byte[] byteArray = new byte[(int) file.length()];
 			byteArray = FileUtils.readFileToByteArray(file);
 			// end of writing to bytes
 
-			/* response.setContentType(fileMeta.getFileType()); */
 			response.setHeader("Content-disposition", "attachment; filename=\"" + "GAReportappReopen.csv" + "\"");
 			FileCopyUtils.copy(byteArray, response.getOutputStream());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-	/*-------------------------------------------Download file to local storage-------------------------------------------*/
+	/*-------------------------------------------Download file to local storage for App Open-------------------------------------------*/
 
 	@RequestMapping(value = "AppOpenDownload", method = RequestMethod.GET)
 	public void getOpenCSvFile(
@@ -167,38 +177,33 @@ public class GoogleAnalyticReporting {
 		// fileMeta = files.get(Integer.parseInt(value));
 
 		try {
-			// System.out.println("download file name:" +
-			// fileMeta.getDownloadFileName());
+			
 			// writing download file in byte
-			File file = new File("/home/bridgeit/Music/weboutput/GAReportAppOpen.csv");
+			File file = new File(csvfilepath+"GAReportAppOpen.csv");
 			byte[] byteArray = new byte[(int) file.length()];
 			byteArray = FileUtils.readFileToByteArray(file);
 			// end of writing to bytes
 
-			/* response.setContentType(fileMeta.getFileType()); */
 			response.setHeader("Content-disposition", "attachment; filename=\"" + "GAReportappOpen.csv" + "\"");
 			FileCopyUtils.copy(byteArray, response.getOutputStream());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-	/*-------------------------------------------Download file to local storage-------------------------------------------*/
+	/*-------------------------------------------Download file to local storage for summary ------------------------------------------*/
 
 	@RequestMapping(value = "SumaaryReportDownload", method = RequestMethod.GET)
 	public void getSummaryReportCSvFile(
 			HttpServletResponse response/* ,@PathVariable String value */) throws FileNotFoundException {
-		// fileMeta = files.get(Integer.parseInt(value));
 
 		try {
-			// System.out.println("download file name:" +
-			// fileMeta.getDownloadFileName());
+			
 			// writing download file in byte
-			File file = new File("/home/bridgeit/Music/weboutput/summaryreport.csv");
+			File file = new File(csvfilepath+"summaryreport.csv");
 			byte[] byteArray = new byte[(int) file.length()];
 			byteArray = FileUtils.readFileToByteArray(file);
 			// end of writing to bytes
 
-			/* response.setContentType(fileMeta.getFileType()); */
 			response.setHeader("Content-disposition", "attachment; filename=\"" + "summaryreport.csv" + "\"");
 			FileCopyUtils.copy(byteArray, response.getOutputStream());
 		} catch (IOException e) {

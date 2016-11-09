@@ -1,0 +1,1082 @@
+{
+ "startDate":"2016-10-09",
+  "endDate":"2016-10-15",
+  "APPLICATION_NAME":"Appystore test app",
+  "KEY_FILE_LOCATION":"/home/bridgeit/Desktop/springexp/HelloAnalytics/AppyGAReports-35a6c523765c.p12",
+  "SERVICE_ACCOUNT_EMAIL":"appystorereport@appygareports.iam.gserviceaccount.com",
+  "VIEW_ID":"ga:111820853",
+	"CSVFilePath":"/home/bridgeit/Music/weboutput/",
+
+  
+  "GAReportInfo": [
+{
+      "GAID": "1",
+      "GAdiscription": "App Open Data",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1",
+        "ga:eventCategory"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==App Open",
+        "ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "2",
+      "GAdiscription": "App Reopen Data - For Upgrade users",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1",
+        "ga:eventCategory"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==App Reopen",
+        "ga:dimension15==10",
+			"ga:dimension14=@:true"
+
+      ]
+    },
+    {
+      "GAID": "3",
+      "GAdiscription": "Number of unqiue users clicking on Locked content",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1",
+        "ga:eventAction"
+      ],
+      "dimensionfilter": [
+        "ga:eventAction==locked",
+				"ga:eventCategory==Video Play",
+				"ga:dimension15==10"
+
+      ]
+    },
+    {
+      "GAID": "4",
+      "GAdiscription": "Number of users on Splash screen",
+      "metric": [
+        "ga:sessions",
+        "ga:screenviews",
+        "ga:exits",
+        "ga:exitRate"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:screenName==SplashScreen",
+				"ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "5",
+      "GAdiscription": "Number of users on Registration Page",
+      "metric": [
+        "ga:sessions",
+        "ga:screenviews",
+        "ga:exits",
+        "ga:exitRate"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:screenName==Registration",
+				"ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "6",
+      "GAdiscription": "Number of users on Avatar Selection",
+      "metric": [
+        "ga:sessions",
+        "ga:screenviews",
+        "ga:exits",
+        "ga:exitRate"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:screenName==Avatar selection",
+				"ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "7",
+      "GAdiscription": "Number of users launching 15 day trial pop up",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1",
+        "ga:dimension8"
+      ],
+      "dimensionfilter": [
+        "ga:eventLabel=@Launch",
+        "ga:eventAction==StartTrialPopUp",
+				"ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "8",
+      "GAdiscription": "Number of users launching 15 day trial pop up on data (prefill)",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1",
+        "ga:dimension8"
+      ],
+      "dimensionfilter": [
+        "ga:eventLabel=@Launch",
+        "ga:eventAction==StartTrialPopUp",
+        "ga:dimension8=@:D",
+			"ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "9",
+      "GAdiscription": "Number of users launching 15 day trial pop up on WiFi (no-prefill)",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1",
+        "ga:dimension8"
+      ],
+      "dimensionfilter": [
+        "ga:eventLabel=@Launch",
+        "ga:eventAction==StartTrialPopUp",
+        "ga:dimension8=@:W",
+"ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "10",
+      "GAdiscription": "Number of user clicking on 15 day Start Trial",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1",
+        "ga:dimension8"
+      ],
+      "dimensionfilter": [
+        "ga:eventAction==StartTrialPopUp",
+        "ga:eventLabel=@StartTrial",
+				"ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "11",
+      "GAdiscription": "Number of users launching 15 day trial pop up on data (prefill)",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1",
+        "ga:dimension8"
+      ],
+      "dimensionfilter": [
+        "ga:eventAction==StartTrialPopUp",
+        "ga:eventLabel=@StartTrial",
+        "ga:dimension8=@:D",
+"ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "12",
+      "GAdiscription": "Number of users launching 15 day trial pop up on WiFi (no-prefill)",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1",
+        "ga:dimension8"
+      ],
+      "dimensionfilter": [
+        "ga:eventAction==StartTrialPopUp",
+        "ga:eventLabel=@StartTrial",
+        "ga:dimension8=@:W",
+"ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "13",
+      "GAdiscription": "Number of users launching 30 day trial pop up",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1",
+        "ga:dimension8"
+      ],
+      "dimensionfilter": [
+        "ga:eventAction==UpdateUserPopUp",
+        "ga:eventLabel=@Launch",
+				"ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "14",
+      "GAdiscription": "Number of users launching 30 day trial pop up on data (prefill)",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1",
+        "ga:dimension8"
+      ],
+      "dimensionfilter": [
+        "ga:eventAction==UpdateUserPopUp",
+        "ga:eventLabel=@Launch",
+        "ga:dimension8=@:D",
+				"ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "15",
+      "GAdiscription": "Number of users launching 30 day trial pop up on WiFi (no prefill)",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1",
+        "ga:dimension8"
+      ],
+      "dimensionfilter": [
+        "ga:eventAction==UpdateUserPopUp",
+        "ga:eventLabel=@Launch",
+        "ga:dimension8=@:W",
+				"ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "16",
+      "GAdiscription": "Number of users clicking on start trial",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1",
+        "ga:dimension8"
+      ],
+      "dimensionfilter": [
+        "ga:eventAction==UpdateUserPopUp",
+        "ga:eventLabel=@StartTrial",
+				"ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "17",
+      "GAdiscription": "Number of users clicking on start trial on data (prefill) ",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1",
+        "ga:dimension8"
+      ],
+      "dimensionfilter": [
+        "ga:eventAction==UpdateUserPopUp",
+        "ga:eventLabel=@StartTrial",
+        "ga:dimension8=@:D",
+				"ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "18",
+      "GAdiscription": "Number of users clicking on start trial on WiFI (prefill)",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1",
+        "ga:dimension8"
+      ],
+      "dimensionfilter": [
+        "ga:eventAction==UpdateUserPopUp",
+        "ga:eventLabel=@StartTrial",
+        "ga:dimension8=@:W",
+				"ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "19",
+      "GAdiscription": "Number of users reopening app for start trial (Through Notifications)",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1",
+        "ga:dimension8"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Push Message",
+        "ga:eventLabel==@trial_start",
+        "ga:eventAction==App Reopen",
+        "ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "20",
+      "GAdiscription": "Number of users reopening app for start trial - data",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1",
+        "ga:dimension8"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Push Message",
+        "ga:eventLabel==@trial_start",
+        "ga:eventAction==App Reopen",
+        "ga:dimension8=@:D",
+ "ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "21",
+      "GAdiscription": "Number of users reopening app for start trial - WiFi",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1",
+        "ga:dimension8"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Push Message",
+        "ga:eventLabel=@trial_start",
+        "ga:eventAction==App Reopen",
+        "ga:dimension8=@:W",
+ "ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "22",
+      "GAdiscription": "Number of user Clicking on Start trial",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1",
+        "ga:dimension8"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Push Message",
+        "ga:eventAction==Start Trial",
+"ga:dimension15==10"
+				
+      ]
+    },
+    {
+      "GAID": "23",
+      "GAdiscription": "Number of user Clicking on Start trial - Data",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1",
+        "ga:dimension8"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Push Message",
+        "ga:eventAction==Start Trial",
+        "ga:dimension8=@:D",
+"ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "24",
+      "GAdiscription": "Number of user Clicking on Start trial - Wifi",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1",
+        "ga:dimension8"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Push Message",
+        "ga:eventAction==Start Trial",
+        "ga:dimension8=@:W",
+"ga:dimension15==10"
+      ]
+    },
+  
+    {
+      "GAID": "26",
+      "GAdiscription": "Register On Boarding (Users opting for 15 day trial after failed login attempts)",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1",
+        "ga:dimension8"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==RegisterOnboarding",
+	"ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "27",
+      "GAdiscription": "Number of users with mobile number prefilled",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1",
+        "ga:dimension8"
+      ],
+      "dimensionfilter": [
+        "ga:eventAction==StartTrialPopUp",
+        "ga:eventLabel=@Launch",
+        "ga:dimension8=@:D",
+"ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "28",
+      "GAdiscription": "Remaining Trial start  users Through OTP Process (A56-A58)",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1",
+        "ga:dimension8"
+      ],
+      "dimensionfilter": [
+        "ga:eventAction==StartTrialPopUp",
+        "ga:eventLabel=@Launch",
+        "ga:dimension8=@:D",
+"ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "29",
+      "GAdiscription": "OTP Request (Android IDs)",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==OTP Pop Up",
+        "ga:eventAction==OTPRequest",
+"ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "30",
+      "GAdiscription": "OTP Responses(Android IDs)",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==OTP Pop Up",
+        "ga:eventAction==OTPResponse",
+"ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "31",
+      "GAdiscription": "Verification Request (Android IDs)",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==OTP Pop Up",
+        "ga:eventAction==verificationRequest",
+"ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "32",
+      "GAdiscription": "Incorrect OTP entry (Android IDs)",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==OTP Pop Up",
+        "ga:eventAction==failure",
+"ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "33",
+      "GAdiscription": "Subscription page views  (Android IDs)",
+      "metric": [
+        "ga:sessions",
+        "ga:screenviews",
+        "ga:exits",
+        "ga:exitRate"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:screenName==Product Page"
+      ]
+    },
+    {
+      "GAID": "34",
+      "GAdiscription": "Parent Details ",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Continue",
+        "ga:eventAction==Parent Details",
+        "ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "35",
+      "GAdiscription": "Shipping Address (Clicks)",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Continue",
+        "ga:eventAction==Shipping Address",
+	"ga:dimension15==10"
+
+      ]
+    },
+    {
+      "GAID": "36",
+      "GAdiscription": "Payment",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Payment",
+				"ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "37",
+      "GAdiscription": "Payment Success",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Payment",
+        "ga:eventAction==success",
+"ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "38",
+      "GAdiscription": "Payment Failure",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Payment",
+        "ga:eventAction==failure",
+"ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "39",
+      "GAdiscription": "Update Address Clicks",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Parent Dashboard",
+        "ga:eventAction==Update Address",
+				"ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "40",
+      "GAdiscription": "Update Address Saves",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Update Address",
+        "ga:eventAction==Save Address",
+"ga:dimension15==10"
+      ]
+    },
+    {
+      "GAID": "41",
+      "GAdiscription": "All Trial Users(downloads)",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Video Play",
+        "ga:eventAction==play_click",
+				"ga:dimension15==10"
+      ]
+    },    
+ {
+      "GAID": "42",
+      "GAdiscription": "Notifications(content)",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Push Message",
+        "ga:eventAction==Message reached",
+        "ga:eventLabel=@content"
+
+
+      ]
+    },
+    {
+      "GAID": "43",
+      "GAdiscription": "Notifications(content) App Reopen",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Push Message",
+        "ga:eventAction==App Reopen",
+        "ga:eventLabel=@content"
+
+
+      ]
+    },
+    {
+      "GAID": "44",
+      "GAdiscription": "no_third_party_ads(content)",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Push Message",
+        "ga:eventAction==Message reached",
+        "ga:eventLabel=@no_third_party_ads"
+
+      ]
+    },
+    {
+      "GAID": "45",
+      "GAdiscription": "no_third_party_ads(content)Reopen",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Push Message",
+        "ga:eventAction==App Reopen",
+        "ga:eventLabel=@no_third_party_ads"
+
+      ]
+    },
+    {
+      "GAID": "46",
+      "GAdiscription": "paid_users_get_free_worksheet",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Push Message",
+        "ga:eventAction==Message reached",
+        "ga:eventLabel=@paid_users_get_free_worksheet"
+
+      ]
+    },
+    {
+      "GAID": "47",
+      "GAdiscription": "paid_users_get_free_worksheet Reopen",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Push Message",
+        "ga:eventAction==App Reopen",
+        "ga:eventLabel=@paid_users_get_free_worksheet"
+
+      ]
+    },
+    {
+      "GAID": "48",
+      "GAdiscription": "trial_expired",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Push Message",
+        "ga:eventAction==Message reached",
+        "ga:eventLabel=@trial_expired"
+
+      ]
+    },
+    {
+      "GAID": "49",
+      "GAdiscription": "trial_expired Reopen",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Push Message",
+        "ga:eventAction==App Reopen",
+        "ga:eventLabel=@trial_expired"
+
+      ]
+    },
+    {
+      "GAID": "50",
+      "GAdiscription": "trial_expiry_reminder",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Push Message",
+        "ga:eventAction==Message reached",
+        "ga:eventLabel=@trial_expiry_reminder"
+
+      ]
+    },
+    {
+      "GAID": "51",
+      "GAdiscription": "trial_expiry_reminder Reopen",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+   
+        "ga:eventCategory==Push Message",
+        "ga:eventAction==App Reopen",
+        "ga:eventLabel=@trial_expiry_reminder"
+
+      ]
+    },
+    {
+      "GAID": "52",
+      "GAdiscription": "trial_start",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Push Message",
+        "ga:eventAction==Message reached",
+        "ga:eventLabel=@trial_start"
+
+      ]
+    },
+    {
+      "GAID": "53",
+      "GAdiscription": "trial_start Reopen",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Push Message",
+        "ga:eventAction==App Reopen",
+        "ga:eventLabel=@trial_start"
+
+      ]
+    },
+    {
+      "GAID": "54 ",
+      "GAdiscription": "welcome",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Push Message",
+        "ga:eventAction==Message reached",
+        "ga:eventLabel=@welcome"
+
+      ]
+    },
+    {
+      "GAID": "55 ",
+      "GAdiscription": "welcome Reopen",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Push Message",
+        "ga:eventAction==App Reopen",
+        "ga:eventLabel=@welcome"
+
+      ]
+    },
+    {
+      "GAID": "56 ",
+      "GAdiscription": "consumption threshold",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Push Message",
+        "ga:eventAction==Message reached",
+        "ga:eventLabel=@consumption_threshold"
+
+      ]
+    },
+    {
+      "GAID": "57 ",
+      "GAdiscription": "consumption threshold Reopen",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Push Message",
+        "ga:eventAction==App Reopen",
+        "ga:eventLabel=@consumption_threshold"
+
+      ]
+    },
+    {
+      "GAID": "58 ",
+      "GAdiscription": "child progress",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Push Message",
+        "ga:eventAction==Message reached",
+        "ga:eventLabel=@child_progress"
+
+      ]
+    },
+    {
+      "GAID": "59 ",
+      "GAdiscription": "child progress App Reopen",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Push Message",
+        "ga:eventAction==App Reopen",
+        "ga:eventLabel=@child_progress"
+
+      ]
+    },
+    {
+      "GAID": "60 ",
+      "GAdiscription": "form fill abandonment",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+       
+        "ga:eventCategory==Push Message",
+        "ga:eventAction==Message reached",
+        "ga:eventLabel=@form_fill_abandonment"
+
+
+      ]
+    },
+    {
+      "GAID": "61 ",
+      "GAdiscription": "form fill abandonment Reopen",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Push Message",
+        "ga:eventAction==App Reopen",
+        "ga:eventLabel=@form_fill_abandonment"
+
+      ]
+    },
+    {
+      "GAID": "62 ",
+      "GAdiscription": "COD reconcilliation",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Push Message",
+        "ga:eventAction==Message reached",
+        "ga:eventLabel=@cod_reconcillation"
+
+      ]
+    },
+    {
+      "GAID": "63 ",
+      "GAdiscription": "COD reconcilliation Reopen",
+      "metric": [
+        "ga:totalEvents"
+      ],
+      "dimension": [
+        "ga:date",
+        "ga:dimension1"
+      ],
+      "dimensionfilter": [
+        "ga:eventCategory==Push Message",
+        "ga:eventAction==App Reopen",
+        "ga:eventLabel=@cod_reconcillation"
+
+      ]
+    }
+    ]
+}
