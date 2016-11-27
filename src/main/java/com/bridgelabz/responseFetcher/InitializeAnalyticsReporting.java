@@ -73,7 +73,7 @@ public class InitializeAnalyticsReporting {
 
 	
 	// method which give response after setting dimension metric and filter
-	public GetReportsResponse getReport(AnalyticsReporting service, GaReportInputModel gaReportInputModel)
+	public GetReportsResponse getReport(AnalyticsReporting service, GaReportInputModel gaReportInputModel,String pagetoken, ArrayList<ReportRequest> requests)
 			throws IOException {
 
 		ArrayList<String> metricArrayList = new ArrayList<String>();
@@ -161,25 +161,31 @@ public class InitializeAnalyticsReporting {
 		dmfilterclauselist.add(dimensionFilterPathClause.setFilters(dimensfilterList).setOperator("AND"));
 
 /*-----------------creating request object and setting value of metric dimension and filters------*/		
-		// Creating the ReportRequest object.
 		ReportRequest request = new ReportRequest()
 				.setViewId(VIEW_ID)
 				.setDateRanges(Arrays.asList(dateRange))
 				.setMetrics(metriclist)
-				.setDimensions(dimensList);
-		
+				.setDimensions(dimensList)
+				.setPageSize(10000)
+				.setPageToken(pagetoken);
+
 		// if dimensionfilter is available then only set it
 		if (dimensionFilterArrayList.size() >= 1) {
+
 			request.setDimensionFilterClauses(dmfilterclauselist);
+
 		}
 
-		// making ReportRequest ArrayList
-		ArrayList<ReportRequest> requests = new ArrayList<ReportRequest>();
+
+		// adding into ArrayList of report request
 		requests.add(request);
+
 		// Creating the GetReportsRequest object.
 		GetReportsRequest getReport = new GetReportsRequest().setReportRequests(requests);
+
 		// Calling the batchGet method.
 		GetReportsResponse response = service.reports().batchGet(getReport).execute();
+
 		// Returning the response.
 		return response;
 	}

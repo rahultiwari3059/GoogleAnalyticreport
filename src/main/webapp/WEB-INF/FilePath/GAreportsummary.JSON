@@ -2,7 +2,7 @@
  "startDate":"2016-10-09",
   "endDate":"2016-10-15",
   "APPLICATION_NAME":"Appystore test app",
-  "KEY_FILE_LOCATION":"/home/bridgeit/Desktop/springexp/HelloAnalytics/AppyGAReports-35a6c523765c.p12",
+  "KEY_FILE_LOCATION":"/home/bridgeit/Desktop/GoogleAnalyticwebproject/AppyGAReports-35a6c523765c.p12",
   "SERVICE_ACCOUNT_EMAIL":"appystorereport@appygareports.iam.gserviceaccount.com",
   "VIEW_ID":"ga:111820853",
 	"CSVFilePath":"/home/bridgeit/Music/weboutput/",

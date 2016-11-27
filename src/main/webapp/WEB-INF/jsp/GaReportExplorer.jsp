@@ -1,3 +1,4 @@
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -22,7 +23,7 @@ tr:nth-child(even) {
 	background-color: #ccf5ff
 }
 </style>
-<body >
+<body>
 	<jsp:include page="/UploadJsonFile.jsp"></jsp:include>
 
 	<h2>AppOpenTable</h2>
@@ -47,8 +48,11 @@ tr:nth-child(even) {
 	</table>
 	<br>
 	<br>
-	<center><h3>App Open csv download</h3><a href="AppOpenDownload"><button>download</button></a></center>
-	
+	<center>
+		<h3>App Open csv download</h3>
+		<a href="AppOpenDownload"><button>download</button></a>
+	</center>
+
 	<br>
 	<br>
 	<h2>AppReOpenTable</h2>
@@ -76,13 +80,51 @@ tr:nth-child(even) {
 			</tr>
 		</c:forEach>
 	</table>
-	<center><h3>App ReOpen csv download</h3><a href="AppReopenDownload"><button>download</button></a></center>
-	
+	<center>
+		<h3>App ReOpen csv download</h3>
+		<a href="AppReopenDownload"><button>download</button></a>
+	</center>
+
 	<br>
 	<br>
 
-	<center><h3>Download Summary Report</h3><a href="SumaaryReportDownload"><button>download</button></a></center>
-	
+	<center>
+		<h3>Download Summary Report</h3>
+		<a href="SumaaryReportDownload"><button>download</button></a>
+	</center>
+	<br>
+	<br>
+	<h2>SummaryReportTable</h2>
+
+	<table border="1" align="center">
+
+		<%
+			List<List<String>> summaryRepostList = (List<List<String>>) request.getAttribute("summaryRepostList");
+
+			//			for (int i = 0; i < summaryRepostList.size(); i++) {
+			for (List<String> listOuter : summaryRepostList) {
+		%>
+		<tr>
+			<%
+				//for (int j = 0; j < summaryRepostList.get(i).size(); j++) {
+					for (String lstr : listOuter) {
+
+						if (lstr == null || lstr.trim().isEmpty()) {
+							continue;
+						}
+			%>
+
+			<%-- <td><%=summaryRepostList.get(i).get(j)%></td> --%>
+			<td><%=lstr%></td>
+
+			<%
+				}
+			%>
+		</tr>
+		<%
+			}
+		%>
+	</table>
 
 
 </body>

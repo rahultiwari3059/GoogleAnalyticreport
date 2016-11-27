@@ -29,20 +29,21 @@ public class ResponseReader {
 
 			// covering report array into JSONArray
 			JSONArray reportarray = (JSONArray) jsonObject.get("reports");
+			// creating object of ArrayList of columnHeader and metricHeader
+			ArrayList<String> columnHeaderArrayList = new ArrayList<String>();
+			ArrayList<String> metricHeaderArrayList = new ArrayList<String>();
+
+			// arrayList of HashMap ArrayList of dimension
+			ArrayList<HashMap<String, String>> dimensionHashMapArrayList = new ArrayList<HashMap<String, String>>();
+
+			// arrayList of HashMap ArrayList of metrics
+			ArrayList<HashMap<String, String>> metricHashMapArrayList = new ArrayList<HashMap<String, String>>();
+
 
 			// reading report JSONArray
 			for (int j = 0; j < reportarray.size(); j++) {
 
-				// creating object of ArrayList of columnHeader and metricHeader
-				ArrayList<String> columnHeaderArrayList = new ArrayList<String>();
-				ArrayList<String> metricHeaderArrayList = new ArrayList<String>();
-
-				// arrayList of HashMap ArrayList of dimension
-				ArrayList<HashMap<String, String>> dimensionHashMapArrayList = new ArrayList<HashMap<String, String>>();
-
-				// arrayList of HashMap ArrayList of metrics
-				ArrayList<HashMap<String, String>> metricHashMapArrayList = new ArrayList<HashMap<String, String>>();
-
+				
 				// getting first object and converting into JSONObject
 				JSONObject obj3 = (JSONObject) reportarray.get(j);
 

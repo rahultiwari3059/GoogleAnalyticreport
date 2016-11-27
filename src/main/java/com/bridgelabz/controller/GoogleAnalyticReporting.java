@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
@@ -23,6 +24,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.bridgelabz.Csvfilecreator.AppOpenModelSetter;
 import com.bridgelabz.Csvfilecreator.AppReOpenModelSetter;
+import com.bridgelabz.Csvfilecreator.SummaryReportCsvFilecreator;
 import com.bridgelabz.dao.HibernateDao;
 import com.bridgelabz.inputReader.GaReprtInfoArrayList;
 import com.bridgelabz.model.AllElementModels;
@@ -38,8 +40,11 @@ import java.util.List;
 
 @Controller
 public class GoogleAnalyticReporting {
+	
 	static String csvfilepath;
-	private static final String UPLOAD_DIRECTORY = "/home/bridgeit/Desktop/GoogleAnalyticwebproject/GoogleAnalyticReport/src/main/webapp/WEB-INF/FilePath/";
+	
+	
+	private static final String UPLOAD_DIRECTORY = "/home/bridgeit/Desktop/";
 	@Resource(name = "hibernateDao")
 	private HibernateDao hibernateDaoObject;
 	
@@ -58,7 +63,8 @@ public class GoogleAnalyticReporting {
 		FileCopyUtils.copy(file.getBytes(), new FileOutputStream(UPLOAD_DIRECTORY + "/" + file.getOriginalFilename()));
 		String msg = "";
 		try {
-
+			
+			
 			// taking JSON file path
 			String jsonfilepath = UPLOAD_DIRECTORY + "/" + file.getOriginalFilename();
 			
@@ -84,8 +90,13 @@ public class GoogleAnalyticReporting {
 
 			// creating object of AppOpenModelSetter class
 			AppOpenModelSetter appOpenModelSetterObject = new AppOpenModelSetter();
+			
 			// creating object of AppReOpenModelSetter class
 			AppReOpenModelSetter appReOpenModelSetterObject = new AppReOpenModelSetter();
+			
+			//creating object of SummaryReportCsvFilecreator class
+			SummaryReportCsvFilecreator smCsvFilecreator = new SummaryReportCsvFilecreator();
+
 
 			// passing JSONpath and getting ArrayList of GaInputInfoModel class
 			ArrayList<GaReportInputModel> gaReportInputInfoArrayList = GaReprtInfoArrayListObject
@@ -131,12 +142,32 @@ public class GoogleAnalyticReporting {
 
 			// printing after completion of process
 			System.out.println("all reports are created");
-
+			
+			//this is to add app open data in database 
 			List<AppReOpenModel> appReopenList = (List<AppReOpenModel>) hibernateDaoObject.getAppReOpen();
 			model.addAttribute("appReopenList", appReopenList);
 			
+			// this is to add app Reopen data in database 
 			List<AppOpenModel> appOpenList = (List<AppOpenModel>) hibernateDaoObject.getAppOpen();
 			model.addAttribute("appOpenList", appOpenList);
+			
+			System.out.println("******"+SummaryReportCsvFilecreator.summaryReportModelArrayListObject.get(0).getDate());
+			System.out.println("******"+SummaryReportCsvFilecreator.summaryReportModelArrayListObject.get(0).getAndroidIdCount());
+			
+			hibernateDaoObject.saveSummary(SummaryReportCsvFilecreator.summaryReportModelArrayListObject);
+			
+			
+			List<List<String>> summaryRepostList = smCsvFilecreator.getSummary();
+			for (int i = 0; i < summaryRepostList.size(); i++) {
+
+				for (int j = 0; j < summaryRepostList.get(i).size(); j++) {
+
+					System.out.println(summaryRepostList.get(i).get(j));
+
+				}
+			}
+
+			model.addAttribute("summaryRepostList", summaryRepostList);
 			
 			msg = "file uploaded successfully";
 		}

@@ -48,6 +48,7 @@ public class GaReprtInfoArrayList {
 			secretFileModelObject.setVIEW_ID((String) jsonObject.get("VIEW_ID"));
 
 			secretFileModelObject.setCsvFilePath((String) jsonObject.get("CSVFilePath"));
+			
 
 			// passing secretFileModelObject to constructor to set all secret
 			// credential

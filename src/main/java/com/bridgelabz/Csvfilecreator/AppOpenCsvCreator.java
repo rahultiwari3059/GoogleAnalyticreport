@@ -79,7 +79,7 @@ public class AppOpenCsvCreator {
 
 			}
 			bw1.close();
-			// HasMap of date and androidset
+		/*	// HasMap of date and androidset
 			HashMap<String, HashSet<String>> dateAnNdroidIdmap = new HashMap<String, HashSet<String>>();
 
 			for (int k = 0; k < appOpenModelArrayListObject.size(); k++) {
@@ -110,7 +110,7 @@ public class AppOpenCsvCreator {
 
 				}
 			}
-			/*----------------- adding into array list after fetching from hash map ------------------------------*/
+			----------------- adding into array list after fetching from hash map ------------------------------
 			for (Entry<String, HashSet<String>> m1 : dateAnNdroidIdmap.entrySet()) {
 				// adding into array list
 				Uniquedate.add(m1.getKey());
@@ -158,7 +158,9 @@ public class AppOpenCsvCreator {
 			}
 			bw.close();
 
-		} catch (Exception e) {
+		}*/
+		}
+			catch (Exception e) {
 			e.printStackTrace();
 
 		}

@@ -96,8 +96,10 @@ public class ResponseElementReader {
 						if (gaReportInputModel.getmGaID().equals("2")) {
 							appOpenFlag = true;
 							allElementFlag1 = true;
+							
 							appReOpenModelObject.setmGaId(gaReportInputModel.getmGaID());
 							allElementModelsObject.setmGaid(gaReportInputModel.getmGaID());
+							
 							appReOpenModelObject.setmGadiscription(gaReportInputModel.getmGaDiscription());
 							allElementModelsObject.setmGadiscription(gaReportInputModel.getmGaDiscription());
 
@@ -130,9 +132,7 @@ public class ResponseElementReader {
 							}
 							if (m1.getKey().equals("ga:dimension1")) {
 								allElementModelsObject.setmAndroidId(m1.getValue());
-								// System.out.println("androidid"+m1.getValue());
 							}
-							// System.out.println(allElementModelsObject.toString());
 						}
 
 					}
@@ -140,37 +140,49 @@ public class ResponseElementReader {
 					allElementModelArrayListObject.add(allElementModelsObject);
 					
 					if (!appOpenFlag)
-						//allElementModelArrayListObject.add(allElementModelsObject);
+						
 						appOpenModelArrayListObject.add(appOpenModelObject);
 					if (!appReOpenFlag)
-						//allElementModelArrayListObject.add(allElementModelsObject);
+						
 						appReOpenModelArrayListObject.add(appReOpenModelObject);
-				/*	if (!allElementFlag && !allElementFlag1)
-						allElementModelArrayListObject.add(allElementModelsObject);*/
+				
 				}
 			}
-			// System.out.println(allElementModelArrayListObject.toString());
+			
+			
+			allElementCSvFileCreatorObject.allElementCSvFileCreator(allElementModelArrayListObject,
+					gaReportInputModel, androidIdAppOpen, androidIdReAppOpen);
+			
 			// method to create appOpen CSvfile
 			if (gaReportInputModel.getmGaID().equals("1")) {
+				
 				androidIdAppOpen = appOpenCsvCreatorObject.appOpenCsvCreator(appOpenModelArrayListObject,
 						gaReportInputModel);
+				/*allElementCSvFileCreatorObject.allElementCSvFileCreator(allElementModelArrayListObject,
+						gaReportInputModel, androidIdAppOpen, androidIdReAppOpen);*/
 			}
+			
+			
 			// method to create appOpen CSvfile
 			if (gaReportInputModel.getmGaID().equals("2")) {
+				
 				androidIdReAppOpen = appReOpenCsvCreatorObject.appReOpenCsvCreator(appReOpenModelArrayListObject,
 						gaReportInputModel);
-
+				/*allElementCSvFileCreatorObject.allElementCSvFileCreator(allElementModelArrayListObject,
+						gaReportInputModel, androidIdAppOpen, androidIdReAppOpen);*/
 			}
+			
 			// method to create all other than AppOpen and Reopen
 			if (!gaReportInputModel.getmGaID().equals("1") && !gaReportInputModel.getmGaID().equals("2")) {
-				allElementCSvFileCreatorObject.allElementCSvFileCreator(allElementModelArrayListObject,
-						gaReportInputModel, androidIdAppOpen, androidIdReAppOpen);
+				
+				/*allElementCSvFileCreatorObject.allElementCSvFileCreator(allElementModelArrayListObject,
+						gaReportInputModel, androidIdAppOpen, androidIdReAppOpen);*/
 			}
 
 		} catch (Exception e) {
+			
 			System.out.println("there is 0 rows in response");
-			//e.printStackTrace();
-
+			
 		}
 	
 		return allElementModelArrayListObject;

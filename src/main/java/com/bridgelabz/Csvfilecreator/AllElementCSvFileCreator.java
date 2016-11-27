@@ -32,7 +32,8 @@ public class AllElementCSvFileCreator {
 	public void allElementCSvFileCreator(ArrayList<AllElementModels> allElementModelArrayListObject,
 			GaReportInputModel gaReportInputModel, HashSet<String> androidIdAppOpen,
 			HashSet<String> androidIdReAppOpen) {
-		androidIdAppOpen1.addAll(androidIdReAppOpen);
+		
+		//androidIdAppOpen1.addAll(androidIdReAppOpen);
 		// creating HashMap of Android id
 
 		// creating HashSet object to add android id
